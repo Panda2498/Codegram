@@ -38,8 +38,8 @@ public class profile_view extends AppCompatActivity implements NavigationView.On
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        menus = new int[]{R.id.nav_home, R.id.nav_myProfile, R.id.nav_performance, R.id.nav_codeAssistant,
-                R.id.nav_search, R.id.nav_follow, R.id.nav_contest, R.id.nav_forum,
+        menus = new int[]{R.id.nav_home, R.id.nav_myProfile, R.id.nav_performance, R.id.nav_codeAssistant
+                , R.id.nav_contest, R.id.nav_forum,
                 R.id.nav_logout};
 
         drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -153,13 +153,7 @@ public class profile_view extends AppCompatActivity implements NavigationView.On
             FragmentManager manager = getSupportFragmentManager();
             manager.beginTransaction().replace(R.id.fragment, profile, profile.getTag()).commit();
         }
-        else if (id == R.id.nav_follow)
-        {
-            setTitle("Followers");
-            follow_management followManagement = new follow_management();
-            FragmentManager manager = getSupportFragmentManager();
-            manager.beginTransaction().replace(R.id.fragment, followManagement, followManagement.getTag()).commit();
-        }
+
         else if (id == R.id.nav_forum)
         {
             setTitle("TechForum");
@@ -167,13 +161,7 @@ public class profile_view extends AppCompatActivity implements NavigationView.On
             FragmentManager manager = getSupportFragmentManager();
             manager.beginTransaction().replace(R.id.fragment, techForum, techForum.getTag()).commit();
         }
-        else if (id == R.id.nav_search)
-        {
-            setTitle("Search");
-            search_user search = new search_user();
-            FragmentManager manager = getSupportFragmentManager();
-            manager.beginTransaction().replace(R.id.fragment, search, search.getTag()).commit();
-        }
+
         else if(id == R.id.nav_contest)
         {
             setTitle("Upcoming Contests");
